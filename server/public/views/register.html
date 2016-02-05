@@ -1,0 +1,35 @@
+<!--This is the Registration Page, which appears as a view on index.html-->
+
+<hr>
+
+<div class="col-md-6">
+    <h2>About Registration</h2><br>
+    <p>First Paragraph</p>
+    <p>Second Paragraph</p>
+    <p>Third Paragraph</p>
+</div>
+
+<div class="col-md-6">
+    <h2>New Member Information</h2>
+
+    <form class="registrationForm" action="/register" method="post">
+        First Name:
+        <input type="text" name="firstname"><br><br>
+        Last Name:
+        <input type="text" name="lastname"><br><br>
+        Email:
+        <input type="text" name="email"><br><br>
+        Password:
+        <input type="text" name="password"><br><br>
+        Membership Type:
+        <select>
+            <option value="Citizen">Citizen</option>
+            <option value="Organization">Organization</option>
+            <option value="Party">Party</option>
+        </select><br><br>
+        <input type="submit" class="btn btn-success"></input>
+    </form>
+
+</div>
+
+<p class="copyright">Copyright © 2016 -- Jeremy Cloutier</p>

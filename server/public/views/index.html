@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="grassrootApp">
+<head>
+    <meta charset="UTF-8">
+    <title>GrassRoot Solo Project</title>
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-route/angular-route.min.js"></script>
+    <script src="assets/scripts/client.min.js"></script>
+    <base href="/">
+</head>
+<body>
+    <img src="../assets/styles/grassrootlogo.jpg" alt="grassrootlogo" class="logo">
+
+    <h1>Welcome to GrassRoot</h1>
+
+    <div ng-controller="LoginController">
+        Email:
+        <input type="text" ng-model="data.username" value="">
+        Password:
+        <input type="text" ng-model="data.password" value="">
+        <button ng-click="submitLogin()" value="Log In">Submit</button>
+    </div>
+
+<div ng-view></div>
+
+</body>
+</html>

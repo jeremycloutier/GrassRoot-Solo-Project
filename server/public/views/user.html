@@ -1,0 +1,59 @@
+<!--This is the User Page, which appears as a view on index.html-->
+<hr>
+<div class="col-md-6">
+    <h2>Submit an Event</h2><br>
+    <form action="" method="post">
+        Event Title:
+        <input type="text" name="eventtitle"><br><br>
+        Host Name:
+        <input type="text" name="hostname"><br><br>
+        Date:
+        <input type="date" name="date"><br><br>
+        Location:
+        <input type="text" name="address"><br><br>
+        Description:<br>
+        <textarea name="description" cols="50" rows="5"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<div class="col-md-6">
+    <h2>Search for Events</h2>
+
+    <div class="selectorDiv">
+        <select name="states">
+            <option>Select a State</option>
+            <option value="AL">AL</option>
+            <option value="AK">AK</option>
+            <option value="AZ">AZ</option>
+        </select>
+        <button class="btn btn-success">Search</button>
+    </div>
+
+
+    <table id="t01">
+        <tr>
+            <th>Event Title</th>
+            <th>Host</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Solo Project Presentations</td>
+            <td>Prime Digital Academy</td>
+            <td>2/12/16</td>
+            <td>Prime Digital Academy</td>
+            <td>Theta Cohort will be presenting their solo projects.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
+<p class="copyright">Copyright © 2016 -- Jeremy Cloutier</p>

@@ -1,0 +1,92 @@
+body{
+    font-family: arial, sans-serif;
+}
+
+.logo{
+    height: 78px;
+    width: 84px;
+    margin-left: 36px;
+    float: left;
+}
+h1 {
+    color: limegreen;
+    text-decoration: underline;
+    font-size: 48px;
+    margin: 36px 0 0 0;
+}
+
+hr {
+    margin: 4px 48px 4px 48px;
+    border: 1px solid lightgray;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+    color: limegreen;
+    margin: 12px 0;
+    padding: 0px;
+}
+
+.logIn {
+    text-align: right;
+    margin: 0 48px 0 0;
+}
+
+.registrationForm{
+    text-align: center;
+    margin: 48px 0 0 0;
+}
+
+.col-md-6{
+    border: 2px solid gray;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    height: 450px;
+}
+
+li {
+    font-size: 18px;
+    margin-bottom: 36px;
+}
+
+#registerNow{
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-success{
+    margin: 0 0 2px 0;
+}
+
+.selectorDiv {
+    text-align: center;
+}
+
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+th, td {
+    padding: 5px;
+    text-align: center;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+    background-color:#fff;
+}
+table#t01 th	{
+    background-color: black;
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    color: lightgray;
+}
