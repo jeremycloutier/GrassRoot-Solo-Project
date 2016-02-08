@@ -5,6 +5,7 @@ var pg = require('pg');
 var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var register = require('./routes/register');
+var eventsubmit = require('./routes/eventsubmit');
 
 var app = express();
 
@@ -29,8 +30,9 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use('/', index);
 app.use('/register', register);
+app.use('/eventsubmit', eventsubmit);
+app.use('/', index);
 
 passport.serializeUser(function(user, done){
     console.log('serializeUser', user);
@@ -42,7 +44,7 @@ passport.deserializeUser(function(id, done){
     pg.connect(connectionString, function(err, client){
         var user = {};
 
-        var query = client.query('SELECT * FROM users WHERE user_id = $1', [id]);    // This is an example query.
+        var query = client.query('SELECT * FROM users WHERE user_id = $1', [id]);
 
         query.on('row', function(row){
             user = row;
@@ -52,12 +54,13 @@ passport.deserializeUser(function(id, done){
     });
 });
 
+// Note: Passport stores user session information in req.user.  Use req.user.id for id, etc.
 passport.use('local', new localStrategy({
     passReqToCallback: true,
     usernameField:'username'
 }, function(req, username, password, done){
     console.log('called');
-    pg.connect(connectionString, function(err, client){ // DO NOT use 'done' here or it will fail silently and be very hard to find
+    pg.connect(connectionString, function(err, client){
         var databaseUser = {};
 
         var query = client.query('SELECT * FROM users WHERE email = $1', [username]);

@@ -12,12 +12,7 @@ h1 {
     color: limegreen;
     text-decoration: underline;
     font-size: 48px;
-    margin: 36px 0 0 0;
-}
-
-hr {
-    margin: 4px 48px 4px 48px;
-    border: 1px solid lightgray;
+    margin: 24px 0 0 0;
 }
 
 h2 {
@@ -25,9 +20,16 @@ h2 {
     text-decoration: underline;
     color: limegreen;
     margin: 12px 0;
-    padding: 0px;
+    padding: 0;
+}
+h3, h4 {
+    text-align: center;
 }
 
+hr {
+    margin: 6px 48px 6px 48px;
+    border: 1px solid lightgray;
+}
 .logIn {
     text-align: right;
     margin: 0 48px 0 0;
@@ -38,9 +40,16 @@ h2 {
     margin: 48px 0 0 0;
 }
 
-.col-md-6{
-    border: 2px solid gray;
-    border-radius: 4px;
+.eventForm{
+    margin-left: 96px;
+}
+.eventForm input, select {
+    margin-bottom: 6px;
+}
+
+.col-md-6, .col-md-12{
+    border: 2px solid white;
+    border-radius: 24px;
     background-color: whitesmoke;
     height: 450px;
 }
@@ -50,7 +59,7 @@ li {
     margin-bottom: 36px;
 }
 
-#registerNow{
+#registerNow, #returnHome{
     display: block;
     margin: 0 auto;
 }
@@ -89,4 +98,38 @@ table#t01 th	{
 .copyright {
     text-align: center;
     color: lightgray;
+}
+
+
+.tableMain {
+    width: 100%;
+    height: 350px;
+    border: 1px solid black;
+}
+
+.tableColumn {
+    float: left;
+    width: 20%;
+    height: 48px;
+    text-align: center;
+}
+
+.tableHeading {
+    background-color: black;
+    color: white;
+    height: 30px;
+    font-weight: bold;
+}
+
+.tableRow {
+    height: 31px;
+}
+
+
+.tableRow:nth-child(even) {
+    background-color: #fff;
+}
+.tableRow:nth-child(odd) {
+    background-color:#d3d3d3;
+
 }
