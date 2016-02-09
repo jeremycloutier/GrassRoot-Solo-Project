@@ -1,4 +1,5 @@
 <!--This is the User Page, which appears as a view on index.html-->
+<!--<h2 class="welcomeUser">Welcome, User</h2>-->
 <hr>
 <div class="col-md-6">
     <h2>Submit an Event</h2>
@@ -15,12 +16,8 @@
         City:
         <input type="text" name="city"><br>
         State:
-        <select name="state">
-            <option>Select a State</option>
-            <option value="MN">MN</option>
-            <option value="AL">AL</option>
-            <option value="AK">AK</option>
-            <option value="AZ">AZ</option>
+        <select name="state" ng-model="selectState">
+            <option ng-repeat="state in states" value="{{state}}">{{state}}</option>
         </select><br>
         ZIP:
         <input type="text" name="zip"><br>
@@ -48,34 +45,29 @@
     <div class="tableMain">
         <div class="tableColumn">
             <div class="tableHeading">Event Title</div>
-            <div class="tableRow">Column 1, Row 1</div>
-            <div class="tableRow">Column 1, Row 2</div>
-            <div class="tableRow">Column 1, Row 3</div>
-            <div class="tableRow">Column 1, Row 4</div>
-            <div class="tableRow">Column 1, Row 5</div>
-            <div class="tableRow">Column 1, Row 6</div>
-            <div class="tableRow">Column 1, Row 7</div>
-            <div class="tableRow">Column 1, Row 8</div>
-            <div class="tableRow">Column 1, Row 9</div>
-            <div class="tableRow">Column 1, Row 10</div>
+            <div class="tableRow" ng-repeat="event in events">{{event.title}}</div>
         </div>
 
         <div class="tableColumn">
             <div class="tableHeading">Host</div>
+            <div class="tableRow" ng-repeat="event in events">{{event.host}}</div>
+
         </div>
 
         <div class="tableColumn">
             <div class="tableHeading">Date</div>
+            <div class="tableRow" ng-repeat="event in events">{{event.date}}</div>
         </div>
 
         <div class="tableColumn">
             <div class="tableHeading">Location</div>
+            <div class="tableRow" ng-repeat="event in events">{{event.street_address}}<br>{{event.city}}, {{event.zip}}</div>
         </div>
 
         <div class="tableColumn">
             <div class="tableHeading">Description</div>
+            <div class="tableRow" ng-repeat="event in events">{{event.description}}</div>
         </div>
-
     </div>
 </div>
 

@@ -5,6 +5,7 @@ var pg = require('pg');
 var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var register = require('./routes/register');
+var event = require('./routes/event');
 var eventsubmit = require('./routes/eventsubmit');
 
 var app = express();
@@ -18,7 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 //[][][][][][][][][][][][][][][][][][][][][][][][][][]
-//                  PASSPORT THINGS                 // Need to replace "id" with "user_id", replace "username" with "email".
+//                  PASSPORT THINGS                 //
 //[][][][][][][][][][][][][][][][][][][][][][][][][][]
 app.use(session({
     secret: 'secret',
@@ -31,6 +32,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/register', register);
+app.use('/event', event);
 app.use('/eventsubmit', eventsubmit);
 app.use('/', index);
 

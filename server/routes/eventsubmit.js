@@ -24,11 +24,9 @@ router.post('/', function(req,res,next) {
         });
 
         query.on('end', function(){
-            //res.sendStatus(200);
             res.sendFile(path.join(__dirname, '../public/views/success.html'));
         });
     });
-
 });
 
 module.exports = router;

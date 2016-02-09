@@ -15,14 +15,13 @@ router.get('/failure', function(request, response){
     response.sendFile(path.join(__dirname, '../public/views/failure.html'));
 });
 
-router.get('/*', function(request, response){
-    response.redirect('/');
-});
+//router.get('/*', function(request, response){
+//    response.redirect('/');
+//});
 
 router.post('/', passport.authenticate('local', {
     successRedirect: '/success',
     failureRedirect:'/failure'
 }));
-
 
 module.exports = router;

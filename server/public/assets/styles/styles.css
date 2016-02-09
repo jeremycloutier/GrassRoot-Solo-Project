@@ -22,6 +22,11 @@ h2 {
     margin: 12px 0;
     padding: 0;
 }
+
+.welcomeUser{
+    text-align: right;
+    margin-right: 200px;
+}
 h3, h4 {
     text-align: center;
 }
@@ -47,7 +52,7 @@ hr {
     margin-bottom: 6px;
 }
 
-.col-md-6, .col-md-12{
+.col-md-4, .col-md-6, .col-md-8, .col-md-12 {
     border: 2px solid white;
     border-radius: 24px;
     background-color: whitesmoke;
@@ -105,13 +110,13 @@ table#t01 th	{
     width: 100%;
     height: 350px;
     border: 1px solid black;
+    border-radius: 4px;
 }
 
 .tableColumn {
     float: left;
     width: 20%;
     height: 48px;
-    text-align: center;
 }
 
 .tableHeading {
@@ -119,10 +124,12 @@ table#t01 th	{
     color: white;
     height: 30px;
     font-weight: bold;
+    text-align: center;
 }
 
 .tableRow {
-    height: 31px;
+    height: 125%;
+    text-align: center;
 }
 
 
