@@ -32,9 +32,6 @@ router.get('/:state', function(req, res, next){
             res.send(results);
         });
     });
-    //res.send('OK'); //remove this once complete
 });
-
-
 
 module.exports = router;

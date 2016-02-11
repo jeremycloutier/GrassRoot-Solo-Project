@@ -4,7 +4,8 @@
     <h2>About GrassRoot</h2><br>
     <ul>
         <li>GrassRoot is a community-driven political event organizer that promotes civic engagement by helping you plan and locate events in your area.</li>
-        <li>To find political events in your area, simply select your state from the drop-down menu on the right, then click "Search"!</li>
+        <li>To find political events in your area, simply select your state from the drop-down menu on the right, then click "Search".
+        To view more information about an event, click on the event's title.</li>
         <li>Join the Network: Register for free as a GrassRoot Member, and promote your own events on the GrassRoot Network!</li>
     </ul>
     <a href="/register"><button class="btn btn-success" id="registerNow">Register Now!</button></a>
@@ -23,7 +24,9 @@
     <div class="tableMain">
         <div class="tableColumn">
             <div class="tableHeading">Event Title</div>
-            <div class="tableRow" ng-repeat="event in events">{{event.title}}</div>
+            <div class="tableRow" ng-repeat="event in events">
+                <a href="/event" ng-click="linkToEvent(event)">{{event.title}}</a>
+            </div>
         </div>
 
         <div class="tableColumn">
@@ -48,5 +51,8 @@
         </div>
     </div>
 </div>
+
+<a href="/event"><button class="viewEvent">Go to Event Page</button></a>
+
 
 <p class="copyright">Copyright © 2016 -- Jeremy Cloutier</p>

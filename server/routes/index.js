@@ -15,9 +15,13 @@ router.get('/failure', function(request, response){
     response.sendFile(path.join(__dirname, '../public/views/failure.html'));
 });
 
-//router.get('/*', function(request, response){
-//    response.redirect('/');
-//});
+router.get('/event', function(req, res, next){
+    res.sendFile(path.join(__dirname, '../public/views/event.html'));
+});
+
+router.get('/*', function(request, response){
+    response.redirect('/');
+});
 
 router.post('/', passport.authenticate('local', {
     successRedirect: '/success',

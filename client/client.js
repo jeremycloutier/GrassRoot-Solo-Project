@@ -56,10 +56,15 @@ app.controller('EventController', ['$scope', '$http', function($scope, $http){
             console.log(response);
             $scope.events = response.data;
         });
-
     };
 
-
+    $scope.linkToEvent = function(event){
+        console.log("This is event id:", event.id);
+        $http.get('/event/' + event.id).then(function(response){
+            console.log(response);
+            $scope.event = response.data;
+        });
+    };
 }]);
 
 app.controller('LoginController', ['$scope', '$http', '$location', function($scope, $http, $location){
