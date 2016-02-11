@@ -26,7 +26,7 @@ router.post('/', function(req,res,next) {
 
         query.on('end', function(){
             //res.sendStatus(200);
-            res.sendFile(path.join(__dirname, '../public/views/user.html'));
+            res.sendFile(path.join(__dirname, '../public/views/regsuccess.html'));
         });
     });
 

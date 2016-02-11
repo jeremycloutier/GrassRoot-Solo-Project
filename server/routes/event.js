@@ -6,7 +6,6 @@ var router = express.Router();
 var connectionString = 'postgres://localhost:5432/grassroot_project_db';
 
 router.get('/:state', function(req, res, next){
-    console.log('hit endpoint');
     console.log(req.params.state);
 
     var reqState = req.params.state;
