@@ -11,21 +11,19 @@
     <base href="/">
 </head>
 <body ng-controller="MainController">
-    <!--<div class="headerContent">-->
-        <img src="../assets/styles/grassrootlogo.jpg" alt="grassrootlogo" class="logo">
 
-        <h1>Welcome to GrassRoot</h1>
+    <a href="/"><img src="../assets/styles/grassrootlogo.jpg" alt="grassrootlogo" class="logo"></a>
 
-        <div ng-controller="LoginController">
-            Email:
-            <input type="text" ng-model="data.username" value="">
-            Password:
-            <input type="text" ng-model="data.password" value="">
-            <button ng-click="submitLogin()" value="Log In">Submit</button>
-        </div>
-    <!--</div>-->
-    <!--<div class="clearfix"></div>-->
+    <h1>Welcome to GrassRoot</h1>
 
+    <div ng-controller="LoginController">
+        Email:
+        <input type="text" ng-model="data.username" value="">
+        Password:
+        <input type="text" ng-model="data.password" value="">
+        <button ng-click="submitLogin()" value="Log In">Submit</button>
+        <span><button class="logout" ng-click="logout()">Log Out</button></span>
+    </div>
 
     <div ng-view></div>
 

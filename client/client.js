@@ -56,11 +56,6 @@ app.controller('EventController', ['$scope', '$http', function($scope, $http){
     $scope.chooseEvent = function(event){
         console.log("This is event id:", event.id);
         eventID = event.id;
-        //$http.get('/event/info/' + event.id).then(function(response){
-        //    console.log(response);
-        //    $scope.selectedEvent = response.data[0];
-        //    console.log($scope.selectedEvent.title);
-        //});
     };
 }]);
 
@@ -87,16 +82,11 @@ app.controller('LoginController', ['$scope', '$http', '$location', function($sco
             //error
         });
     };
-}]);
 
-//app.controller('RegisterController', ['$scope', function($scope){
-//
-//}]);
-//
-//app.controller('SuccessController', ['$scope', function($scope){
-//
-//}]);
-//
-//app.controller('FailController', ['$scope', function($scope){
-//
-//}]);
+    $scope.logout = function(){
+        $http.get('/logout').then(function(){
+            console.log('logout clicked');
+            $location.path('/');
+        })
+    };
+}]);
