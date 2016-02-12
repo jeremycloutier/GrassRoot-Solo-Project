@@ -33,4 +33,31 @@ router.get('/:state', function(req, res, next){
     });
 });
 
+router.get('/info/:id', function(req, res, next){
+    console.log(req.params.id);
+    var reqId = req.params.id;
+    var results = [];
+
+    pg.connect(connectionString, function(err, client){
+        var query = client.query('SELECT * FROM events WHERE id = $1', [reqId]);
+
+        query.on('error', function(error){
+            console.log(error);
+            res.sendStatus(500);
+        });
+
+        query.on('row', function(row){
+            console.log(row);
+            results.push(row);
+            //res.sendStatus(500);
+        });
+
+        query.on('end', function(){
+            client.end();
+            //return res.json(results);
+            res.send(results);
+        });
+    });
+});
+
 module.exports = router;

@@ -10,20 +10,24 @@
     <script src="assets/scripts/client.min.js"></script>
     <base href="/">
 </head>
-<body>
-    <img src="../assets/styles/grassrootlogo.jpg" alt="grassrootlogo" class="logo">
+<body ng-controller="MainController">
+    <!--<div class="headerContent">-->
+        <img src="../assets/styles/grassrootlogo.jpg" alt="grassrootlogo" class="logo">
 
-    <h1>Welcome to GrassRoot</h1>
+        <h1>Welcome to GrassRoot</h1>
 
-    <div ng-controller="LoginController">
-        Email:
-        <input type="text" ng-model="data.username" value="">
-        Password:
-        <input type="text" ng-model="data.password" value="">
-        <button ng-click="submitLogin()" value="Log In">Submit</button>
-    </div>
+        <div ng-controller="LoginController">
+            Email:
+            <input type="text" ng-model="data.username" value="">
+            Password:
+            <input type="text" ng-model="data.password" value="">
+            <button ng-click="submitLogin()" value="Log In">Submit</button>
+        </div>
+    <!--</div>-->
+    <!--<div class="clearfix"></div>-->
 
-<div ng-view></div>
+
+    <div ng-view></div>
 
 </body>
 </html>

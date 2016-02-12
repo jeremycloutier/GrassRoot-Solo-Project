@@ -1,4 +1,5 @@
 var app = angular.module('grassrootApp', ['ngRoute']);
+var eventID;
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
     $routeProvider
@@ -20,7 +21,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         })
         .when('/event', {
             templateUrl: 'views/event.html',
-            controller: 'EventController'
+            controller: 'DisplayController'
         })
         .when('/home', {
             templateUrl: 'views/user.html',
@@ -32,24 +33,18 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     $locationProvider.html5Mode(true);
 }]);
 
-app.controller('RegisterController', ['$scope', function($scope){
-
-}]);
-
-app.controller('SuccessController', ['$scope', function($scope){
-
-}]);
-
-app.controller('FailController', ['$scope', function($scope){
-
+app.controller('MainController', ['$scope', '$http', function($scope, $http){
+    $scope.selectedEvent = {};
 }]);
 
 app.controller('EventController', ['$scope', '$http', function($scope, $http){
-    $scope.states =['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin', 'Wyoming'];
+    $scope.states =["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA",
+        "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH",
+        "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX",
+        "UT", "VT", "VA", "WA", "WV", "WI", "WY"];
     $scope.events = [];
 
     $scope.getEvents = function(){
-
         var url = '/event/' + $scope.selectState;
 
         $http.get(url).then(function(response){
@@ -58,13 +53,26 @@ app.controller('EventController', ['$scope', '$http', function($scope, $http){
         });
     };
 
-    $scope.linkToEvent = function(event){
+    $scope.chooseEvent = function(event){
         console.log("This is event id:", event.id);
-        $http.get('/event/' + event.id).then(function(response){
+        eventID = event.id;
+        //$http.get('/event/info/' + event.id).then(function(response){
+        //    console.log(response);
+        //    $scope.selectedEvent = response.data[0];
+        //    console.log($scope.selectedEvent.title);
+        //});
+    };
+}]);
+
+app.controller('DisplayController', ['$scope', '$http', function($scope, $http){
+    $scope.linkToEvent = function(){
+        $http.get('/event/info/' + eventID).then(function(response){
             console.log(response);
-            $scope.event = response.data;
+            $scope.selectedEvent = response.data[0];
+            console.log($scope.selectedEvent.title);
         });
     };
+    $scope.linkToEvent();
 }]);
 
 app.controller('LoginController', ['$scope', '$http', '$location', function($scope, $http, $location){
@@ -80,3 +88,15 @@ app.controller('LoginController', ['$scope', '$http', '$location', function($sco
         });
     };
 }]);
+
+//app.controller('RegisterController', ['$scope', function($scope){
+//
+//}]);
+//
+//app.controller('SuccessController', ['$scope', function($scope){
+//
+//}]);
+//
+//app.controller('FailController', ['$scope', function($scope){
+//
+//}]);

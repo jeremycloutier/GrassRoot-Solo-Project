@@ -1,6 +1,6 @@
 <hr>
 
-<div class="col-md-6">
+<div class="col-md-4">
     <h2>About GrassRoot</h2><br>
     <ul>
         <li>GrassRoot is a community-driven political event organizer that promotes civic engagement by helping you plan and locate events in your area.</li>
@@ -11,7 +11,7 @@
     <a href="/register"><button class="btn btn-success" id="registerNow">Register Now!</button></a>
 </div>
 
-<div class="col-md-6">
+<div class="col-md-8">
     <h2>Search for Events</h2>
 
     <div class="selectorDiv">
@@ -25,7 +25,7 @@
         <div class="tableColumn">
             <div class="tableHeading">Event Title</div>
             <div class="tableRow" ng-repeat="event in events">
-                <a href="/event" ng-click="linkToEvent(event)">{{event.title}}</a>
+                <a href="/event" ng-click="chooseEvent(event)">{{event.title}}</a>
             </div>
         </div>
 
@@ -41,18 +41,16 @@
         </div>
 
         <div class="tableColumn">
-            <div class="tableHeading">Location</div>
-            <div class="tableRow" ng-repeat="event in events">{{event.street_address}}<br>{{event.city}}, {{event.zip}}</div>
+            <div class="tableLocation">Location</div>
+            <div class="locationRow" ng-repeat="event in events">{{event.street_address}}<br>{{event.city}}, {{event.state}} {{event.zip}}</div>
         </div>
 
-        <div class="tableColumn">
-            <div class="tableHeading">Description</div>
-            <div class="tableRow" ng-repeat="event in events">{{event.description}}</div>
-        </div>
+        <!--<div class="tableColumn">-->
+        <!--<div class="tableHeading">Description</div>-->
+        <!--<div class="tableRow" ng-repeat="event in events">{{event.description}}</div>-->
+        <!--</div>-->
     </div>
 </div>
-
-<a href="/event"><button class="viewEvent">Go to Event Page</button></a>
-
+<!--<a href="/event"><button class="viewEvent">Go to Event Page</button></a>-->
 
 <p class="copyright">Copyright © 2016 -- Jeremy Cloutier</p>

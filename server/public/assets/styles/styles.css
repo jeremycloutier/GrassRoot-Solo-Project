@@ -8,6 +8,7 @@ body{
     margin-left: 36px;
     float: left;
 }
+
 h1 {
     color: limegreen;
     text-decoration: underline;
@@ -25,8 +26,11 @@ h2 {
 
 .welcomeUser{
     text-align: right;
-    margin-right: 200px;
+    margin-right: 308px;
+    color: limegreen;
+    margin-top: -30px;
 }
+
 h3, h4 {
     text-align: center;
 }
@@ -35,6 +39,7 @@ hr {
     margin: 6px 48px 6px 48px;
     border: 1px solid lightgray;
 }
+
 .logIn {
     text-align: right;
     margin: 0 48px 0 0;
@@ -48,6 +53,7 @@ hr {
 .eventForm{
     margin-left: 96px;
 }
+
 .eventForm input, select {
     margin-bottom: 6px;
 }
@@ -60,8 +66,8 @@ hr {
 }
 
 li {
-    font-size: 18px;
-    margin-bottom: 36px;
+    font-size: 16px;
+    margin-bottom: 28px;
 }
 
 #registerNow, #returnHome{
@@ -75,29 +81,6 @@ li {
 
 .selectorDiv {
     text-align: center;
-}
-
-table {
-    width:100%;
-}
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-
-}
-th, td {
-    padding: 5px;
-    text-align: center;
-}
-table#t01 tr:nth-child(even) {
-    background-color: #eee;
-}
-table#t01 tr:nth-child(odd) {
-    background-color:#fff;
-}
-table#t01 th	{
-    background-color: black;
-    color: white;
 }
 
 .copyright {
@@ -115,11 +98,11 @@ table#t01 th	{
 
 .tableColumn {
     float: left;
-    width: 20%;
+    width: 25%;
     height: 48px;
 }
 
-.tableHeading {
+.tableHeading, .tableLocation {
     background-color: black;
     color: white;
     height: 30px;
@@ -127,16 +110,19 @@ table#t01 th	{
     text-align: center;
 }
 
-.tableRow {
-    height: 125%;
+.tableLocation, .locationRow{
+}
+
+.tableRow, .locationRow {
+    height: 130%;
     text-align: center;
+    padding: 10px;
 }
 
-
-.tableRow:nth-child(even) {
-    background-color: #fff;
+.tableRow:nth-child(even), .titleRow:nth-child(even), .locationRow:nth-child(even) {
+    background-color: #d3d3d3;
 }
-.tableRow:nth-child(odd) {
-    background-color:#d3d3d3;
 
+.tableRow:nth-child(odd), .titleRow:nth-child(odd), .locationRow:nth-child(odd) {
+    background-color:#fff;
 }
