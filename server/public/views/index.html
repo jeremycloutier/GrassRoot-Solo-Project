@@ -13,19 +13,17 @@
 <body ng-controller="MainController">
 
     <a href="/"><img src="../assets/styles/grassrootlogo.jpg" alt="grassrootlogo" class="logo"></a>
-
     <h1>Welcome to GrassRoot</h1>
 
     <div ng-controller="LoginController">
         Email:
         <input type="text" ng-model="data.username" value="">
         Password:
-        <input type="text" ng-model="data.password" value="">
+        <input type="password" ng-model="data.password" value="">
         <button ng-click="submitLogin()" value="Log In">Submit</button>
         <span><button class="logout" ng-click="logout()">Log Out</button></span>
     </div>
 
     <div ng-view></div>
-
 </body>
 </html>
