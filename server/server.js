@@ -17,9 +17,7 @@ var connectionString = 'postgres://szbjbbxnkpxici:uzXyuzPfJJlCM20qBePl-I8Oky@ec2
 app.use(express.static('server/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-///////////////////////////////////////
-//HEROKU DATABASE CONNECT STARTS HERE//
-///////////////////////////////////////
+
 pg.defaults.ssl = true;
 pg.connect(connectionString, function(err, client) {
     if (err) throw err;
