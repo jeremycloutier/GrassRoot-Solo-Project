@@ -12,7 +12,7 @@ var app = express();
 
 var localStrategy = require('passport-local').Strategy;
 
-var connectionString = 'postgres://kgjlkpmiimrocr:FwUxlpp9Btu68U4bQ-CUQqlt17@ec2-107-21-120-109.compute-1.amazonaws.com:5432/d2keja1civ4g9o';
+var connectionString = 'postgres://szbjbbxnkpxici:uzXyuzPfJJlCM20qBePl-I8Oky@ec2-54-83-56-31.compute-1.amazonaws.com:5432/d2m4f6d1ii5dtn';
 
 app.use(express.static('server/public'));
 app.use(bodyParser.json());
