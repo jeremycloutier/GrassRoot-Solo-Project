@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //HEROKU DATABASE CONNECT STARTS HERE//
 ///////////////////////////////////////
 pg.defaults.ssl = true;
-pg.connect(process.env.connectionString, function(err, client) {
+pg.connect(connectionString, function(err, client) {
     if (err) throw err;
     console.log('Connected to postgres! Getting schemas...');
 
