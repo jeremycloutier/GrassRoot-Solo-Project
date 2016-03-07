@@ -12,12 +12,25 @@ var app = express();
 
 var localStrategy = require('passport-local').Strategy;
 
-var connectionString = 'postgres://localhost:5432/grassroot_project_db';
+var connectionString = 'postgres://kgjlkpmiimrocr:FwUxlpp9Btu68U4bQ-CUQqlt17@ec2-107-21-120-109.compute-1.amazonaws.com:5432/d2keja1civ4g9o';
 
 app.use(express.static('server/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+///////////////////////////////////////
+//HEROKU DATABASE CONNECT STARTS HERE//
+///////////////////////////////////////
+pg.defaults.ssl = true;
+pg.connect(process.env.connectionString, function(err, client) {
+    if (err) throw err;
+    console.log('Connected to postgres! Getting schemas...');
 
+    client
+        .query('SELECT table_schema,table_name FROM information_schema.tables;')
+        .on('row', function(row) {
+            console.log(JSON.stringify(row));
+        });
+});
 //[][][][][][][][][][][][][][][][][][][][][][][][][][]
 //                  PASSPORT THINGS                 //
 //[][][][][][][][][][][][][][][][][][][][][][][][][][]
