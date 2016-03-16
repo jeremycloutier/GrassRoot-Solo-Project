@@ -3,7 +3,7 @@ var path = require('path');
 var pg = require('pg');
 var router = express.Router();
 
-var connectionString = 'postgres://localhost:5432/grassroot_project_db';
+var connectionString = 'postgres://szbjbbxnkpxici:uzXyuzPfJJlCM20qBePl-I8Oky@ec2-54-83-56-31.compute-1.amazonaws.com:5432/d2m4f6d1ii5dtn';
 
 //GET route to user.html
 router.get('/', function(req, res, next){
